@@ -73,7 +73,7 @@ if __name__ == "__main__":
     def attempt_float(x):
         try:
             return float(x)
-        except TypeError:
+        except ValueError:
             return f"{x} cannot be convert to float"
         else:
             # the code here will only be executed when the code in try part is executed successfully
