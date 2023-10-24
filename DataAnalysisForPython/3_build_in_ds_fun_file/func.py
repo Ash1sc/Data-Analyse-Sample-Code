@@ -41,10 +41,10 @@ if __name__ == "__main__":
     def apply_to_list(some_list: list[int], f):
         return [f(x) for x in some_list]
     l = [1, 2, 3, 4, 5]
-    print(apply_to_list(l, lambda x: x*2))
+    print(apply_to_list(l, lambda x: x * 2))
 
     # or use map() to apply the function to each element within an iterable object
-    print([i for i in map(lambda x: x*2, l)])
+    print([i for i in map(lambda x: x * 2, l)])
 
     # Generator
     # use () instead of [] in comprehension
