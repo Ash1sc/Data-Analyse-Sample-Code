@@ -71,6 +71,14 @@ if __name__ == "__main__":
 
     # errors and exception handling
     def attempt_float(x):
+        """_summary_
+
+        Args:
+            x (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         try:
             return float(x)
         except ValueError:
@@ -84,3 +92,5 @@ if __name__ == "__main__":
 
     print(attempt_float("1.2345"))
     print(attempt_float("something"))
+
+    print(help(attempt_float))

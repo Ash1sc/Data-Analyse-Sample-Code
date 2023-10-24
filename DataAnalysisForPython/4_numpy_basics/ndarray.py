@@ -13,7 +13,7 @@ if __name__ == "__main__":
     # print ndarray metadata
     print(f"data.shape is {data.shape}")
     print(f"data's type is {data.dtype}")
-    print(f"data has {data.ndim} dimensions")\
+    print(f"data has {data.ndim} dimensions")
 
     # create ndarray
     # from sequential-like list
@@ -77,7 +77,48 @@ if __name__ == "__main__":
     # get a subset
     print(arr2d[1:][:2])
 
-    # Boolean Indexing
+    # * Boolean Indexing
+    # filter the index of element satisfying some situations
+    names = np.array(["Bob", "Joe", "Will", "Bob", "Will", "Joe", "Joe"])
+    data = np.array([[4, 7], [0, 2], [-5, 6], [0, 0], [1, 2],
+                     [-12, -4], [3, 4]])
 
-    
+    # the truth is filtering with a sequence of boolean variables
+    print(data[names == "Joe"])
 
+    # a more complicated situation
+    mask = (names == "Bob") | (names == "Joe")
+    print(data[mask])
+
+    # boolean indexing can filter multi dimention at the same time
+    # two dimension to a one-dimension list
+    print(data[data < 0])
+
+    # * fancy indexing
+    # indexing with a list or ndarray
+    arr = np.zeros((8, 4))
+    for i in range(8):
+        arr[i] = i
+
+    print(arr[[4, 3, 0, 6]])
+
+    # in the arr, the negative index means index from the end
+    print(arr[[-4, -3, -6]])
+
+    # pass multi list to select at multi coresponding index
+    arr = np.arange(32).reshape((8, 4))
+
+    print(arr[[1, 5, 7, 2], [0, 3, 1, 2]])
+
+    # * transposing arrays and swapping axes
+
+    arr = (np.arange(16) + 1).reshape((2, 8))
+
+    print(arr)
+    # transposion of matrix
+    print(arr.T)
+    # @ infers the dot multiplition between matrix
+    print(arr @ arr.T)
+
+    # more specific transposing
+    print(arr.swapaxes(0, 1) - arr.T)
