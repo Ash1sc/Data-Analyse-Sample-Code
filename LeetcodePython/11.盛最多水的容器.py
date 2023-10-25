@@ -6,7 +6,7 @@
 
 # @lc code=start
 class Solution:
-    def maxArea(self, height: List[int]) -> int:
+    def maxArea(self, height) -> int:
         i, j = 0, len(height) - 1
 
         res = (j - i) * min(height[i], height[j])
