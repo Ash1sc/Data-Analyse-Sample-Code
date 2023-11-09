@@ -34,7 +34,8 @@ obj3 = pd.Series(sdata)
 print(obj3)
 
 # series convert to dict
-print(obj3.to_dict)
+print("Convert obj3 to dict")
+print(obj3.to_dict())
 
 # pass a list of index to reordering the keys in the dict
 obj4 = pd.Series(sdata, index=["California", "Ohio", "Oregon", "Texas"])
@@ -43,5 +44,3 @@ obj4 = pd.Series(sdata, index=["California", "Ohio", "Oregon", "Texas"])
 obj4.name = "population"
 obj4.index.name = "states"
 print(obj4)
-
-# * DataFrame
